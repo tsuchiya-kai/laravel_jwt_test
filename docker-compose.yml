@@ -12,3 +12,4 @@ services:
       - ./backend:/work
       - ./infra/nginx/default.conf:/etc/nginx/conf.d/default.conf
     working_dir: /work
+# 参考サイト：https://qiita.com/ucan-lab/items/56c9dc3cf2e6762672f4

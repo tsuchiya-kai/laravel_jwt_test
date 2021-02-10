@@ -16,5 +16,7 @@ ps:
 	docker-compose ps
 
 .PHONY: attach
-attach app: 
+attach-app: 
 	docker-compose exec app bash
+attach-web: 
+	docker-compose exec web bash
