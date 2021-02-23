@@ -6,6 +6,27 @@ web アプリ内から SNS に投稿するための API を作成することが
 
 ## How to
 
+- 初めて立ち上げる際の手順
+
+```bash
+make up
+
+make attach-app
+
+composer install
+```
+
+確認：
+http://localhost:10080/
+
+※500 SERVER ERROR が出た場合
+
+```bash
+cp .env.example .env
+
+php artisan key:generate
+```
+
 - コンテナを起動
 
 ```bash
