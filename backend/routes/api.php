@@ -26,4 +26,5 @@ Route::group(['prefix' => 'auth', 'middleware' => 'auth:api'], function () {
     Route::get('user', function (Request $request) {
         return $request->user();
     });
+    Route::get('test', 'AuthController@testApi');
 });

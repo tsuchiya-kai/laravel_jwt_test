@@ -50,7 +50,7 @@ class AuthController extends Controller
      */
     public function logout()
     {
-        // auth()->logout();
+        Auth::logout();
 
         return response()->json(['message' => 'Successfully logged out']);
     }
@@ -62,7 +62,7 @@ class AuthController extends Controller
      */
     public function refresh()
     {
-        // return $this->respondWithToken(auth()->refresh());
+        return $this->respondWithToken(Auth::refresh());
     }
 
     /**
@@ -79,6 +79,13 @@ class AuthController extends Controller
             'token_type' => 'bearer',
             // 'expires_in' => auth()->factory()->getTTL() * 60,
             'expires_in' => Auth::factory()->getTTL() * 60,
+        ]);
+    }
+
+    public function testApi()
+    {
+        return response()->json([
+            'message' => '通信成功'
         ]);
     }
 }
