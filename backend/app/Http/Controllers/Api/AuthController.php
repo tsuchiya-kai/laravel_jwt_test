@@ -14,7 +14,7 @@ class AuthController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth:api', ['except' => ['login']]);
+        $this->middleware('auth:api', ['except' => ['login', 'refresh']]);
     }
 
     /**
@@ -24,6 +24,7 @@ class AuthController extends Controller
      */
     public function login()
     {
+        return ['test'];
         $credentials = request(['email', 'password']);
 
         if (!$token = Auth::attempt($credentials)) {
@@ -78,7 +79,8 @@ class AuthController extends Controller
             'access_token' => $token,
             'token_type' => 'bearer',
             // 'expires_in' => auth()->factory()->getTTL() * 60,
-            'expires_in' => Auth::factory()->getTTL() * 60,
+            // 'expires_in' => Auth::factory()->getTTL() * 60,
+            'expires_in' => 60 * 60,
         ]);
     }
 
