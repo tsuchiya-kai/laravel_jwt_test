@@ -1,8 +1,6 @@
 ## このリポジトリの目的
 
-web アプリ内から SNS に投稿するための API を作成することが目的。
-
-各プラットフォームの API を Laravel の API でラップする形で実装予定。
+Laravel+tymon/jwt-auth を使った認証機能の検証環境を用意する事が目的。
 
 ## How to
 
@@ -44,5 +42,3 @@ make stop
 ```bash
 make attach-app
 ```
-
-今後は Vue を乗っけていく予定
